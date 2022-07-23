@@ -1,0 +1,1 @@
+var o={d:(e,t)=>{for(var r in t)o.o(t,r)&&!o.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},o:(o,e)=>Object.prototype.hasOwnProperty.call(o,e)},e={};o.d(e,{B:()=>t}),console.log("hello world");const t=()=>console.log("test");var r=e.B;export{r as test};
