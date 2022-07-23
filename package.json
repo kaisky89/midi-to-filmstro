@@ -6,7 +6,8 @@
   "author": "Kai Wittmann <kaisky89@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
@@ -15,6 +16,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
   }
 }

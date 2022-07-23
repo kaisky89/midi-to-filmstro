@@ -1,5 +1,6 @@
 const path = require('path')
 
+/** @type {import('webpack').Configuration} */
 module.exports = {
   entry: './src/index.js',
   experiments: {
@@ -10,8 +11,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     library: {
-      // do not specify a `name` here
       type: 'module'
+    }
+  },
+  devServer: {
+    port: 8080,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
     }
   }
 }
