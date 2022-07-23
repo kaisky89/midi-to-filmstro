@@ -6,7 +6,7 @@
   "author": "Kai Wittmann <kaisky89@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
