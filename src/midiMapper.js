@@ -1,4 +1,5 @@
 import mitt from 'mitt'
+// import { console } from './console'
 import { round } from 'lodash'
 
 /**
@@ -36,6 +37,12 @@ const controlDomMap = {
   volume: 'audio_slider'
 }
 
+const controlRecordSectionsMap = {
+  momentum: 0,
+  depth: 1,
+  power: 2
+}
+
 const localStorageManager = {
   save: (obj) => { localStorage.midiMapper = JSON.stringify(obj) },
   load: () => {
@@ -69,7 +76,13 @@ export class MidiMapper {
    * @param {number} value the value it should receive (0-127)
    */
   sendControl (CONTROL, value) {
-    document.querySelector(`#${controlDomMap[CONTROL]}`).value = round(value / 127, 2)
+    const domElement = document.querySelector(`#${controlDomMap[CONTROL]}`)
+    domElement.value = round(value / 127, 2)
+    if (CONTROL === CONTROLS.VOLUME) {
+      window.stroDaw.setVolume(domElement.value)
+    } else {
+      window.stroDaw.recordSections(controlRecordSectionsMap[CONTROL], domElement)
+    }
   }
 
   setupMidiMappingAll (setupMap = {
