@@ -1,4 +1,5 @@
 const path = require('path')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -20,5 +21,6 @@ module.exports = {
       'Access-Control-Allow-Origin': '*'
     },
     liveReload: false
-  }
+  },
+  plugins: [new ESLintPlugin()]
 }

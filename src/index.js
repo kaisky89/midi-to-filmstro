@@ -1,3 +1,7 @@
-export { default as setupMidiMapping } from './setupMidiMapping'
+import './console'
+import { MidiLearner } from './MidiLearner'
+import midiMapper from './midiMapper'
 
-export const test = () => console.log('test')
+const midiLearner = new MidiLearner(midiMapper)
+
+if (!midiMapper.hasSetupMap) midiLearner.learn()
