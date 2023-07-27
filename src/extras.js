@@ -30,3 +30,12 @@ export const startAudition = async () => {
 export const muteWatermark = () => {
   window.stroPlayer.splayer.watermarkPlayer.mute = true
 }
+
+export const hideAnnoyingElements = () => {
+  const style = document.createElement('style')
+  style.innerHTML = /* css */ `
+    .premium-feature-modal { display: none !important; }
+    .filmstro-modal-with-logo { display: none !important; }
+  `
+  document.head.appendChild(style)
+}

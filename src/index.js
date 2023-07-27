@@ -1,5 +1,10 @@
 import './console'
-import { muteWatermark, setupLoop, startAudition } from './extras'
+import {
+  hideAnnoyingElements,
+  muteWatermark,
+  setupLoop,
+  startAudition,
+} from './extras'
 import { MidiLearner } from './MidiLearner'
 import midiMapper from './midiMapper'
 
@@ -11,5 +16,6 @@ const run = async () => {
   setupLoop()
   startAudition()
   muteWatermark()
+  hideAnnoyingElements()
 }
 run()
