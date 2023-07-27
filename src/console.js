@@ -5,7 +5,7 @@ window.console = {
   log: () => {},
   warn: () => {},
   debug: () => {},
-  error: () => {}
+  error: () => {},
 }
 
 export const console = { log, warn, debug, error }

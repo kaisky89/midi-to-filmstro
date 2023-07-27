@@ -1,5 +1,8 @@
 export const duplicateSections = () => {
-  window.stroDaw.clickHandler3({}, document.querySelector('.daw-item-0 .daw-item-top'))
+  window.stroDaw.clickHandler3(
+    {},
+    document.querySelector('.daw-item-0 .daw-item-top'),
+  )
   window.stroDaw.changeSectionsPlus(+100)
 }
 

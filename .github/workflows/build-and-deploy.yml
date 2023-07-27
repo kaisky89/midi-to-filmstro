@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
 
 jobs:
   build-and-deploy:
@@ -15,12 +15,12 @@ jobs:
         uses: browniebroke/read-nvmrc-action@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: "${{ steps.nvmrc.outputs.node_version }}"
+          node-version: '${{ steps.nvmrc.outputs.node_version }}'
 
       - name: Yarn Setup
         uses: DerYeger/yarn-setup-action@v1.0.1
         with:
-          node-version: "${{ steps.nvmrc.outputs.node_version }}"
+          node-version: '${{ steps.nvmrc.outputs.node_version }}'
 
       - name: Build
         run: yarn build

@@ -3,6 +3,7 @@
 > A simple tool to use midi controllers in the web editor of filmstro.com
 
 ## Requirements
+
 - A Browser that has Midi Support (tested with Chrome)
 - Some kind of midi controller, that has at least 4 different controls
 
@@ -28,4 +29,3 @@ import('https://kaisky89.github.io/midi-to-filmstro/main.js')
 ```js
 localStorage.removeItem('midiMapper')
 ```
-

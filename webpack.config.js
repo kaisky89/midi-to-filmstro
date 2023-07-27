@@ -5,22 +5,22 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 module.exports = {
   entry: './src/index.js',
   experiments: {
-    outputModule: true
+    outputModule: true,
   },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     library: {
-      type: 'module'
-    }
+      type: 'module',
+    },
   },
   devServer: {
     port: 8080,
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
     },
-    liveReload: false
+    liveReload: false,
   },
-  plugins: [new ESLintPlugin()]
+  plugins: [new ESLintPlugin()],
 }
