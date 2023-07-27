@@ -1,11 +1,13 @@
 const nextTick = () => new Promise((resolve) => setTimeout(resolve, 0))
 
-export const duplicateSections = () => {
-  window.stroDaw.clickHandler3(
-    {},
-    document.querySelector('.daw-item-0 .daw-item-top'),
-  )
-  window.stroDaw.changeSectionsPlus(+100)
+export const setupLoop = () => {
+  try {
+    const { loopStart, loopEnd } = window.stroPlayer.splayer.opts2
+    window.Tone.Transport.setLoopPoints(`${loopStart}:0`, `${loopEnd}:0`)
+    window.Tone.Transport.loop = true
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 const setElementChecked = async (selector, checked) => {
