@@ -31,10 +31,10 @@ export const CONTROLS = {
 }
 
 const controlDomMap = {
-  momentum: 'daw-0',
-  depth: 'daw-1',
-  power: 'daw-2',
-  volume: 'audio_slider',
+  momentum: '#daw-0',
+  depth: '#daw-1',
+  power: '#daw-2',
+  volume: '.volume-slider-parent .range-slider',
 }
 
 const controlRecordSectionsMap = {
@@ -78,14 +78,14 @@ export class MidiMapper {
    * @param {number} value the value it should receive (0-127)
    */
   sendControl(CONTROL, value) {
-    const domElement = document.querySelector(`#${controlDomMap[CONTROL]}`)
+    const domElement = document.querySelector(controlDomMap[CONTROL])
     domElement.value = round(value / 127, 2)
     if (CONTROL === CONTROLS.VOLUME) {
       window.stroDaw.setVolume(domElement.value)
     } else {
       window.stroDaw.recordSections(
         controlRecordSectionsMap[CONTROL],
-        domElement,
+        domElement.value,
       )
     }
   }
